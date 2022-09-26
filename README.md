@@ -1,13 +1,13 @@
 # Asset pricing via deep graph learning to incorporate heterogeneous predictors
 This is the source code of our paper, 
-named Asset pricing via deep graph learning to incorporate heterogeneous predictors
+named asset pricing via deep graph learning to incorporate heterogeneous predictors
 
 ## Model architechture
 ![image](./Pictures/model_architecture.png) 
 
 ## Overview
-* `layers.py` contains two modules of the SA-GNN model: Node Representation (`MatrixFusionLayer`) and 
-  Node Links (`ExplicitLayer`);
+* `layers.py` contains two modules of the SA-GNN model:Matrix‐based feature fusion (`MatrixFusionLayer`) and 
+  Self‐adaptive GNN (`ExplicitLayer`);
   
 * `models.py` contains the SA-GNN model;
 
