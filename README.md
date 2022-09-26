@@ -6,7 +6,7 @@ named asset pricing via deep graph learning to incorporate heterogeneous predict
 ![image](./Pictures/model_architecture.png) 
 
 ## Overview
-* `layers.py` contains two modules of the SA-GNN model:Matrix‐based feature fusion (`MatrixFusionLayer`) and 
+* `layers.py` contains two modules of the SA-GNN model: Matrix‐based feature fusion (`MatrixFusionLayer`) and 
   Self‐adaptive GNN (`ExplicitLayer`);
   
 * `models.py` contains the SA-GNN model;
