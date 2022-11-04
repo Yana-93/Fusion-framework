@@ -16,13 +16,13 @@ parser.add_argument('--no-cuda', action='store_true', default=False, help='Disab
 parser.add_argument('--seed', type=int, default=9, help='Random seed.')
 parser.add_argument('--epochs', type=int, default=500, help='Number of epochs to train.')
 parser.add_argument('--lr', type=float, default=0.001, help='Initial learning rate.')
-parser.add_argument('--weight_decay', type=float, default=1e-5, help='Weight decay (L2 loss on parameters).')
-parser.add_argument('--dropout', type=float, default=0.3, help='Dropout rate (1 - keep probability).')
-parser.add_argument('--patience', type=int, default=200, help='Patience')
+parser.add_argument('--weight_decay', type=float, default=1e-6, help='Weight decay (L2 loss on parameters).')
+parser.add_argument('--dropout', type=float, default=0, help='Dropout rate (1 - keep probability).')
+parser.add_argument('--patience', type=int, default=50, help='Patience')
 parser.add_argument('--gpu_ids', type=list, default=[0], help='Disables CUDA training.')
-parser.add_argument('--accumulation_steps', type=int, default=32, help='Gradient Accumulation.')
+parser.add_argument('--accumulation_steps', type=int, default=20, help='Gradient Accumulation.')
 parser.add_argument('--alpha', type=float, default=0.2, help='Alpha for the leaky_relu.')
-parser.add_argument('--hidden', type=int, default=16, help='Number of hidden units.')
+parser.add_argument('--hidden', type=int, default=32, help='Number of hidden units.')
 parser.add_argument('--hidden_LSTM', type=int, default=32, help='Hidden size of LSTM.')
 parser.add_argument('--hidden_spillover', type=int, default=32, help='Hidden size of spillover embedding.')
 parser.add_argument('--nclass', type=int, default=2, help='Number of class.')
@@ -112,7 +112,7 @@ def compute_val():
     print('loss_val: {:.4f}'.format(loss_val_total / len(val_x)),
           'acc_val: {:.4f}'.format(acc),
           'auc_val: {:.4f}'.format(auc), end=' ')
-    return auc
+    return acc
 
 
 def compute_test():
